@@ -16,11 +16,18 @@ function App() {
   ]
 
   return (
-    <DropDown 
+    <>
+    <DropDown className = "flex" 
       options={options} 
       value={selection} 
       onChange={handleSelect} 
     />
+    {/* <DropDown className = "flex" 
+      options={options} 
+      value={selection} 
+      onChange={handleSelect} 
+    /> */}
+    </>
   ) 
 }
 
