@@ -4,7 +4,7 @@ import { nanoid } from 'nanoid'
 import { GoChevronDown, GoChevronLeft } from 'react-icons/go'
 
 export default function Accordion( { items }) {
-    //element at index 0 will be expanded
+    //element will be expanded when state is 0, 1, 2
     const [expandedIndex, setExpandedIndex] = useState(-1);
 
     const handleClick = (nextIndex) => {

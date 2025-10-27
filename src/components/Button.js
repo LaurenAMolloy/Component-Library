@@ -52,6 +52,7 @@ function Button({
 
 // Button.propTypes = {
 //     checkVariationValue: ({ primary, secondary, success, warning, danger}) => {
+    //changing booleans to numbers
 //         const count = Number(!!primary)
 //         + Number(!!secondary)
 //         + Number(!!warning)
