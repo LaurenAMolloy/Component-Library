@@ -14,7 +14,7 @@ function NavProvider ({ children }) {
         }
     window.addEventListener('popstate', handler);
 
-    //cleanup function if nav removed from dom in the future
+    //cleanup function if nav removed from DOM in the future
     const cleanup = () => {
         window.removeEventListener('popstate', handler)
     }
@@ -22,8 +22,18 @@ function NavProvider ({ children }) {
 
     }, [])
 
+    
+    const navigate = (to) => {
+        window.history.pushState({}, '', to);
+        setCurrentPath(to);
+    }
+
     return (
-        <NavigationContext.Provider value={{}}>
+        <NavigationContext.Provider value={{ navigate, currentPath }}>
+            {/* <div>
+                <button onClick={() => navigate('/accordion')}>Go to accordion</button>
+                <button onClick={() => navigate('/dropdown')}>Go to dropdown</button>
+            </div> */}
             {currentPath}
             {children}
         </NavigationContext.Provider>

@@ -1,4 +1,3 @@
-import './index.css' 
 import Accordion from '../components/Accordion.js';
 
 
