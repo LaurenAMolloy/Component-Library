@@ -22,7 +22,6 @@ function NavProvider ({ children }) {
 
     }, [])
 
-    
     const navigate = (to) => {
         window.history.pushState({}, '', to);
         setCurrentPath(to);
@@ -30,10 +29,6 @@ function NavProvider ({ children }) {
 
     return (
         <NavigationContext.Provider value={{ navigate, currentPath }}>
-            {/* <div>
-                <button onClick={() => navigate('/accordion')}>Go to accordion</button>
-                <button onClick={() => navigate('/dropdown')}>Go to dropdown</button>
-            </div> */}
             {currentPath}
             {children}
         </NavigationContext.Provider>

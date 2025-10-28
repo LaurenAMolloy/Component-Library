@@ -1,6 +1,4 @@
-import { useState } from "react";
-import Button from '../components/Button'
-import './index.css' 
+import Button from '../components/Button' 
 import { GoBell, GoCloudDownload, GoDatabase } from 'react-icons/go'
 
 
