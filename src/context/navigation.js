@@ -3,7 +3,6 @@ import { createContext, useState, useEffect } from 'react'
 const NavigationContext = createContext();
 
 function NavProvider ({ children }) {
-    //state set to cause rerender when user presses back and forward
     const [currentPath, setCurrentPath] = useState(window.location.pathname);
 
     //listen for popstate forward back
@@ -14,7 +13,6 @@ function NavProvider ({ children }) {
         }
     window.addEventListener('popstate', handler);
 
-    //cleanup function if nav removed from DOM in the future
     const cleanup = () => {
         window.removeEventListener('popstate', handler)
     }
@@ -29,7 +27,6 @@ function NavProvider ({ children }) {
 
     return (
         <NavigationContext.Provider value={{ navigate, currentPath }}>
-            {currentPath}
             {children}
         </NavigationContext.Provider>
     )
