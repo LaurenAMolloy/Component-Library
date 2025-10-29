@@ -1,5 +1,6 @@
 import Table from '../components/Table'
 import React from 'react'
+import SortableTable from '../components/SortableTable';
 
 export default function TablePage() {
     const data = [
@@ -22,8 +23,11 @@ export default function TablePage() {
         { 
             label: 'Score',
             render: (fruit) => fruit.score,
+            sortValue: (fruit) => fruit.score,
+            header: () => {
+                return <th className="bg-red-500">Score</th>
+            },
          },
-
     ];
 
     const keyFn = (fruit) => {
@@ -32,7 +36,7 @@ export default function TablePage() {
 
   return (
     <div>
-        <Table data={data} config={config} keyFn={keyFn} />
+        <SortableTable data={data} config={config} keyFn={keyFn} />
     </div>
   )
 }
