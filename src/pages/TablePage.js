@@ -14,6 +14,7 @@ export default function TablePage() {
         { 
             label: 'Name',
             render: (fruit) => fruit.name,
+            sortValue: (fruit) => fruit.name
 
          },
         { 
@@ -22,11 +23,8 @@ export default function TablePage() {
          },
         { 
             label: 'Score',
-            render: (fruit) => fruit.score,
+            render: (fruit) => <h1>{fruit.score}</h1>,
             sortValue: (fruit) => fruit.score,
-            header: () => {
-                return <th className="bg-red-500">Score</th>
-            },
          },
     ];
 
@@ -36,6 +34,7 @@ export default function TablePage() {
 
   return (
     <div>
+        <Table data={data} config={config} keyFn={keyFn} />
         <SortableTable data={data} config={config} keyFn={keyFn} />
     </div>
   )
